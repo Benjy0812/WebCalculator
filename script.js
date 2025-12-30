@@ -6,3 +6,19 @@ buttons.forEach((button) => {
     console.log(button.textContent);
   });
 });
+
+function calculateResult() {
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = "Error  ";
+  }
+}
+
+function clearDisplay() {
+  display.value = "";
+}
+
+function appendValue(value) {
+  display.value += value;
+}
