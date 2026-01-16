@@ -7,18 +7,18 @@ buttons.forEach((button) => {
   });
 });
 
-function calculateResult() {
-  try {
-    display.value = eval(display.value);
-  } catch {
-    display.value = "Error";
-  }
+function appendValue(value) {
+  display.value += value;
 }
 
 function clearDisplay() {
   display.value = "";
 }
 
-function appendValue(value) {
-  display.value += value;
+function calculateResult() {
+  try {
+    display.value = math.evaluate(display.value);
+  } catch {
+    display.value = "Error";
+  }
 }
