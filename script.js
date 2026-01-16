@@ -11,7 +11,7 @@ function calculateResult() {
   try {
     display.value = eval(display.value);
   } catch {
-    display.value = "Error  ";
+    display.value = "Error";
   }
 }
 
