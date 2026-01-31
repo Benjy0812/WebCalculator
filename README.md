@@ -1,6 +1,6 @@
 # Web Calculator
 
-A simple, modern web-based calculator.
+A simple, modern web-based calculator built using HTML, CSS, and JavaScript, powered by Vite for fast development.
 
 ![Calculator Screenshot](/img/Calculator.png)
 
@@ -15,7 +15,7 @@ A simple, modern web-based calculator.
 - HTML
 - CSS
 - JavaScript
-- [Vite](https://vitejs.dev/)
+- [Vite][viteWebsite]
 
 ## How to Run Locally
 
@@ -45,3 +45,5 @@ A simple, modern web-based calculator.
 - `npm run dev`: Starts the development server.
 - `npm run build`: Builds the application for production.
 - `npm run preview`: Previews the production build locally.
+
+[viteWebsite]: https://vitejs.dev/
