@@ -1,13 +1,13 @@
 {
   "name": "webcalculator",
-  "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "vite": "latest"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^7.3.0"
   }
 }
