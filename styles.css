@@ -65,12 +65,12 @@ button:active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-button.opperator {
+button.operator {
     background-color: #ff9500;
     color: #fff;
 }
 
-button.opperator:hover {
+button.operator:hover {
     background-color: #ffa733;
 }
 
