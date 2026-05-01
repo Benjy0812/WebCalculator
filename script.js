@@ -1,14 +1,15 @@
 const display = document.getElementById('display')
-const buttons = document.querySelectorAll('button')
 
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    console.log(button.textContent)
-  })
-})
+window.onload = function () {
+  display.value = '0'
+}
 
 function appendValue(value) {
-  if (display.value === 'Error' || display.value === 'undefined' || display.value === 'NaN') {
+  if (
+    display.value === 'Error' ||
+    display.value === 'undefined' ||
+    display.value === 'NaN'
+  ) {
     display.value = ''
   }
   display.value += value
