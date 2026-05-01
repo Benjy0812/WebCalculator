@@ -18,34 +18,27 @@ A sleek, modern calculator web application with a dark theme and smooth animatio
 - Error handling for invalid calculations
 - Clean and intuitive interface
 
+![Calculator Image](public/assets/images/Calculator.png)
+
 ## Prerequisites
 
-- Node.js 14+ and npm (for Vite)
+- Bun (for Vite)
 - Modern web browser
 
 ## Installation
 
 ```bash
-git clone https://github.com/Benjy0812/ModernDarkCalculator.git
-cd ModernDarkCalculator
-npm install
+git clone https://github.com/Benjy0812/WebCalculator.git
+cd WebCalculator
+bun install
 ```
 
 ## Usage
 
 **Development server:**
-```bash
-npm run dev
-```
 
-**Build for production:**
 ```bash
-npm run build
-```
-
-**Preview production build:**
-```bash
-npm run preview
+bun run dev
 ```
 
 **Or simply open `index.html` in your browser for basic usage without Vite.**
@@ -63,7 +56,7 @@ ModernDarkCalculator/
 
 ## How It Works
 
-The calculator uses a simple grid layout with buttons for digits (0-9), operators (+, -, *, /), decimal point, equals, and clear functions. Click buttons to build your calculation, then press `=` to see the result.
+The calculator uses a simple grid layout with buttons for digits (0-9), operators (+, -, \*, /), decimal point, equals, and clear functions. Click buttons to build your calculation, then press `=` to see the result.
 
 ## Technologies Used
 
@@ -76,6 +69,6 @@ The calculator uses a simple grid layout with buttons for digits (0-9), operator
 
 <div align="center">
 
-**Made with ❤️ using HTML, CSS & JavaScript**
+**Made with ❤️ by Benjy**
 
 </div>
