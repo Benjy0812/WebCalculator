@@ -9,60 +9,125 @@
   <body>
     <div class="calculator">
       <!-- Display -->
-      <input
-        type="text"
-        class="calculator__display"
-        id="display"
-        disabled
-        placeholder="0"
-      />
+      <input type="text" class="calculator__display" id="display" />
 
       <!-- Buttons -->
       <div class="calculator__buttons">
         <!-- Row 1 -->
-        <button class="calculator__button" onclick="appendValue('1')">1</button>
-        <button class="calculator__button" onclick="appendValue('2')">2</button>
-        <button class="calculator__button" onclick="appendValue('3')">3</button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('1')"
+        >
+          1
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('2')"
+        >
+          2
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('3')"
+        >
+          3
+        </button>
         <button
           class="calculator__button calculator__button--operator"
+          type="button"
           onclick="appendValue('/')"
         >
           /
         </button>
 
         <!-- Row 2 -->
-        <button class="calculator__button" onclick="appendValue('4')">4</button>
-        <button class="calculator__button" onclick="appendValue('5')">5</button>
-        <button class="calculator__button" onclick="appendValue('6')">6</button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('4')"
+        >
+          4
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('5')"
+        >
+          5
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('6')"
+        >
+          6
+        </button>
         <button
           class="calculator__button calculator__button--operator"
+          type="button"
           onclick="appendValue('*')"
         >
           *
         </button>
 
         <!-- Row 3 -->
-        <button class="calculator__button" onclick="appendValue('7')">7</button>
-        <button class="calculator__button" onclick="appendValue('8')">8</button>
-        <button class="calculator__button" onclick="appendValue('9')">9</button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('7')"
+        >
+          7
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('8')"
+        >
+          8
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('9')"
+        >
+          9
+        </button>
         <button
           class="calculator__button calculator__button--operator"
+          type="button"
           onclick="appendValue('-')"
         >
           -
         </button>
 
         <!-- Row 4 -->
-        <button class="calculator__button" onclick="appendValue('.')">.</button>
-        <button class="calculator__button" onclick="appendValue('0')">0</button>
         <button
-          class="calculator__button calculator__button--operator"
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('.')"
+        >
+          .
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('0')"
+        >
+          0
+        </button>
+        <button
+          class="calculator__button calculator__button--equals"
+          type="button"
           onclick="calculateResult()"
         >
           =
         </button>
         <button
           class="calculator__button calculator__button--operator"
+          type="button"
           onclick="appendValue('+')"
         >
           +
@@ -71,6 +136,7 @@
         <!-- Row 5 -->
         <button
           class="calculator__button calculator__button--clear"
+          type="button"
           onclick="clearDisplay()"
         >
           C

@@ -1,20 +1,21 @@
 :root {
-  --roboto: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  --roboto-mono: 'Roboto Mono', 'Helvetica Neue', Arial, sans-serif;
+  --font-inter: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 
 @font-face {
   font-style: normal;
-  font-weight: normal;
-  src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
-  font-family: 'Roboto';
+  font-weight: 400; /* Regular */
+  src: url('/assets/fonts/Inter-Regular.ttf') format('truetype');
+  font-family: 'Inter';
+  font-display: swap;
 }
 
 @font-face {
   font-style: normal;
-  font-weight: normal;
-  src: url('/public/assets/fonts/RobotoMono-Regular.ttf');
-  font-family: 'Roboto Mono';
+  font-weight: 700; /* Bold */
+  src: url('/assets/fonts/Inter-Bold.ttf') format('truetype');
+  font-family: 'Inter';
+  font-display: swap;
 }
 
 body {
@@ -50,9 +51,9 @@ body {
   padding: 18px;
   width: 90%;
   color: #ffffff;
-  font-weight: bolder;
-  font-size: 26px;
-  font-family: var(--roboto-mono);
+  font-weight: 700;
+  font-size: 28px;
+  font-family: var(--font-inter);
   text-align: right;
 }
 
@@ -77,9 +78,9 @@ body {
   background-color: #3a3a3a;
   padding: 12px 20px;
   color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  font-family: var(--roboto);
+  font-weight: 400;
+  font-size: 18px;
+  font-family: var(--font-inter);
 }
 
 .calculator__button:hover {
@@ -102,6 +103,16 @@ body {
   background-color: #ffa733;
 }
 
+/* Equals Button */
+.calculator__button--equals {
+  background-color: #00bcd4;
+  color: #ffffff;
+}
+
+.calculator__button--equals:hover {
+  background-color: #4dd0e1;
+}
+
 /* Modifier: Clear */
 .calculator__button--clear {
   grid-column: span 4;
@@ -109,5 +120,5 @@ body {
 }
 
 .calculator__button--clear:hover {
-  background-color: #ff5e54;
+  background-color: #ff1100;
 }
