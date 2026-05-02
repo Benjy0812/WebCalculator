@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Dark Calculator</title>
+    <script type="module" crossorigin src="/WebTasky/assets/index-Czn-Awb_.js"></script>
+    <link rel="stylesheet" crossorigin href="/WebTasky/assets/index-C2NNv2BD.css">
+  </head>
+  <body>
+    <div class="calculator">
+      <!-- Display -->
+      <input type="text" class="calculator__display" id="display" />
+
+      <!-- Buttons -->
+      <div class="calculator__buttons">
+        <!-- Row 1 -->
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('1')"
+        >
+          1
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('2')"
+        >
+          2
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('3')"
+        >
+          3
+        </button>
+        <button
+          class="calculator__button calculator__button--operator"
+          type="button"
+          onclick="appendValue('/')"
+        >
+          /
+        </button>
+
+        <!-- Row 2 -->
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('4')"
+        >
+          4
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('5')"
+        >
+          5
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('6')"
+        >
+          6
+        </button>
+        <button
+          class="calculator__button calculator__button--operator"
+          type="button"
+          onclick="appendValue('*')"
+        >
+          *
+        </button>
+
+        <!-- Row 3 -->
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('7')"
+        >
+          7
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('8')"
+        >
+          8
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('9')"
+        >
+          9
+        </button>
+        <button
+          class="calculator__button calculator__button--operator"
+          type="button"
+          onclick="appendValue('-')"
+        >
+          -
+        </button>
+
+        <!-- Row 4 -->
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('.')"
+        >
+          .
+        </button>
+        <button
+          class="calculator__button"
+          type="button"
+          onclick="appendValue('0')"
+        >
+          0
+        </button>
+        <button
+          class="calculator__button calculator__button--equals"
+          type="button"
+          onclick="calculateResult()"
+        >
+          =
+        </button>
+        <button
+          class="calculator__button calculator__button--operator"
+          type="button"
+          onclick="appendValue('+')"
+        >
+          +
+        </button>
+
+        <!-- Row 5 -->
+        <button
+          class="calculator__button calculator__button--clear"
+          type="button"
+          onclick="clearDisplay()"
+        >
+          C
+        </button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+  </body>
+</html>
