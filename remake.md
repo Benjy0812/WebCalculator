@@ -111,16 +111,16 @@ Add transitions, shadows, and hover effects.
 
 ```css
 .calculator__button {
-  width: var(--button-size);
-  height: var(--button-size);
-  background: var(--button-bg);
-  color: var(--text-color);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #0d1b2a;
   border: none;
   border-radius: var(--border-radius);
+  background: var(--button-bg);
+  width: var(--button-size);
+  height: var(--button-size);
+  color: var(--text-color);
   font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 0 #0d1b2a;
 }
 
 .calculator__button:hover {
@@ -147,17 +147,17 @@ Make the display stand out.
 
 ```css
 .calculator__display {
-  width: 100%;
-  height: 80px;
-  background: var(--display-bg);
-  color: var(--text-color);
+  box-sizing: border-box;
+  margin-bottom: 1rem;
   border: none;
   border-radius: var(--border-radius);
+  background: var(--display-bg);
+  padding: 0 1rem;
+  width: 100%;
+  height: 80px;
+  color: var(--text-color);
   font-size: 2.5rem;
   text-align: right;
-  padding: 0 1rem;
-  margin-bottom: 1rem;
-  box-sizing: border-box;
 }
 ```
 
@@ -199,9 +199,9 @@ Your current code uses `math.evaluate`, but `mathjs` is not imported.
 ```javascript
 function calculateResult() {
   try {
-    display.value = eval(display.value);
+    display.value = eval(display.value)
   } catch {
-    display.value = 'Error';
+    display.value = 'Error'
   }
 }
 ```
@@ -220,9 +220,9 @@ Then update your JS:
 ```javascript
 function calculateResult() {
   try {
-    display.value = math.evaluate(display.value);
+    display.value = math.evaluate(display.value)
   } catch {
-    display.value = 'Error';
+    display.value = 'Error'
   }
 }
 ```
@@ -242,27 +242,27 @@ function appendValue(value) {
     display.value === 'undefined' ||
     display.value === 'NaN'
   ) {
-    display.value = '';
+    display.value = ''
   }
 
   // Prevent multiple decimal points
   if (value === '.' && display.value.includes('.')) {
-    return;
+    return
   }
 
   // Prevent leading zeros (e.g., "01", "00")
   if (value === '0' && display.value === '') {
-    display.value = '0';
-    return;
+    display.value = '0'
+    return
   }
 
   // Prevent leading zeros after operators
-  const lastChar = display.value.slice(-1);
+  const lastChar = display.value.slice(-1)
   if (value === '0' && ['+', '-', '*', '/'].includes(lastChar)) {
-    return;
+    return
   }
 
-  display.value += value;
+  display.value += value
 }
 ```
 
@@ -274,28 +274,28 @@ Allow users to use their keyboard.
 
 ```javascript
 document.addEventListener('keydown', (e) => {
-  const key = e.key;
+  const key = e.key
 
   // Numbers and operators
   if (/[0-9+\-*/.=]/.test(key)) {
     if (key === '=') {
-      calculateResult();
+      calculateResult()
     } else {
-      appendValue(key);
+      appendValue(key)
     }
   }
 
   // Backspace
   if (key === 'Backspace') {
-    display.value = display.value.slice(0, -1);
-    if (display.value === '') display.value = '0';
+    display.value = display.value.slice(0, -1)
+    if (display.value === '') display.value = '0'
   }
 
   // Clear
   if (key === 'Escape') {
-    clearDisplay();
+    clearDisplay()
   }
-});
+})
 ```
 
 ---
@@ -308,14 +308,14 @@ document.addEventListener('keydown', (e) => {
 ```javascript
 function calculateResult() {
   try {
-    const result = math.evaluate(display.value);
+    const result = math.evaluate(display.value)
     if (!isFinite(result)) {
-      display.value = 'Error';
+      display.value = 'Error'
     } else {
-      display.value = result;
+      display.value = result
     }
   } catch {
-    display.value = 'Error';
+    display.value = 'Error'
   }
 }
 ```
@@ -386,21 +386,21 @@ Support users with visual impairments.
 Track previous calculations.
 
 ```javascript
-let history = [];
+let history = []
 
 function calculateResult() {
   try {
-    const expression = display.value;
-    const result = math.evaluate(expression);
+    const expression = display.value
+    const result = math.evaluate(expression)
     if (!isFinite(result)) {
-      display.value = 'Error';
+      display.value = 'Error'
     } else {
-      display.value = result;
-      history.push(`${expression} = ${result}`);
-      console.log('History:', history);
+      display.value = result
+      history.push(`${expression} = ${result}`)
+      console.log('History:', history)
     }
   } catch {
-    display.value = 'Error';
+    display.value = 'Error'
   }
 }
 ```
@@ -425,15 +425,15 @@ function calculateResult() {
 // Update calculateResult to handle %
 function calculateResult() {
   try {
-    let expression = display.value.replace(/%/g, '/100*');
-    const result = math.evaluate(expression);
+    let expression = display.value.replace(/%/g, '/100*')
+    const result = math.evaluate(expression)
     if (!isFinite(result)) {
-      display.value = 'Error';
+      display.value = 'Error'
     } else {
-      display.value = result;
+      display.value = result
     }
   } catch {
-    display.value = 'Error';
+    display.value = 'Error'
   }
 }
 ```
@@ -474,8 +474,8 @@ function calculateResult() {
 Cache DOM elements.
 
 ```javascript
-const display = document.getElementById('display');
-const buttons = document.querySelectorAll('.calculator__button');
+const display = document.getElementById('display')
+const buttons = document.querySelectorAll('.calculator__button')
 ```
 
 ---
@@ -485,18 +485,20 @@ const buttons = document.querySelectorAll('.calculator__button');
 Instead of adding event listeners to each button, use one on the parent.
 
 ```javascript
-document.querySelector('.calculator__buttons').addEventListener('click', (e) => {
-  if (e.target.classList.contains('calculator__button')) {
-    const value = e.target.textContent;
-    if (value === '=') {
-      calculateResult();
-    } else if (value === 'C') {
-      clearDisplay();
-    } else {
-      appendValue(value);
+document
+  .querySelector('.calculator__buttons')
+  .addEventListener('click', (e) => {
+    if (e.target.classList.contains('calculator__button')) {
+      const value = e.target.textContent
+      if (value === '=') {
+        calculateResult()
+      } else if (value === 'C') {
+        clearDisplay()
+      } else {
+        appendValue(value)
+      }
     }
-  }
-});
+  })
 ```
 
 - Remove inline `onclick` attributes from HTML.
@@ -508,19 +510,21 @@ document.querySelector('.calculator__buttons').addEventListener('click', (e) => 
 Prevent accidental double-clicks.
 
 ```javascript
-let isCalculating = false;
+let isCalculating = false
 
 function calculateResult() {
-  if (isCalculating) return;
-  isCalculating = true;
+  if (isCalculating) return
+  isCalculating = true
 
   try {
-    display.value = math.evaluate(display.value);
+    display.value = math.evaluate(display.value)
   } catch {
-    display.value = 'Error';
+    display.value = 'Error'
   }
 
-  setTimeout(() => { isCalculating = false; }, 300);
+  setTimeout(() => {
+    isCalculating = false
+  }, 300)
 }
 ```
 
