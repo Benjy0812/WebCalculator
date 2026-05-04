@@ -45,7 +45,7 @@ bun run dev
 
 ## Project Structure
 
-```
+```text
 ModernDarkCalculator/
 ├── index.html          # Main HTML file
 ├── styles.css          # Stylesheet with dark theme
