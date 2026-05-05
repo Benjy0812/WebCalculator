@@ -1,5 +1,3 @@
-import { evaluate } from 'mathjs'
-
 const display = document.getElementById('display')
 const buttons = document.querySelectorAll('button')
 
