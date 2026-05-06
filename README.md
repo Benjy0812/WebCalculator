@@ -18,7 +18,7 @@ A sleek, modern calculator web application with a dark theme and smooth animatio
 - Error handling for invalid calculations
 - Clean and intuitive interface
 
-![Calculator Image](public/assets/images/Calculator.png)
+![Calculator Image](public/assets/images/calculator.png)
 
 ## Prerequisites
 
